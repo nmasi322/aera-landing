@@ -1,0 +1,183 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+@theme {
+	/* Type */
+	--font-sans: 'IBM Plex Sans', system-ui, sans-serif;
+	--font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+	/* The design switches to its stacked layout at 900px */
+	--breakpoint-wide: 900px;
+
+	/* Palette — light surfaces */
+	--color-paper: #ffffff;
+	--color-ink: #000000;
+	--color-ink-soft: #282828;
+	--color-muted: #5e5e5e;
+	--color-muted-light: #737373;
+	--color-ash: #cbcbcb;
+	--color-line: #e5e5e5;
+	--color-line-soft: #ededed;
+	--color-surface: #f3f3f3;
+	--color-placeholder: #e3e3e3;
+
+	/* Palette — dark surfaces */
+	--color-night: #000000;
+	--color-night-card: #141414;
+	--color-night-line: #262626;
+	--color-night-muted: #b3b3b3;
+	--color-night-subtle: #8c8c8c;
+	--color-night-soft: #e5e5e5;
+
+	/* Palette — accents */
+	--color-accent: #7c3aed;
+	--color-accent-soft: #f2ebfd;
+	--color-accent-light: #a78bfa;
+
+	/* Palette — status */
+	--color-success: #0a7f45;
+	--color-success-soft: #e7f6ee;
+	--color-info: #1d4ed8;
+	--color-info-soft: #eaf0ff;
+	--color-warn: #b54708;
+	--color-warn-soft: #fef3e2;
+	--color-danger: #d1242f;
+	--color-danger-soft: #fdecec;
+	--color-danger-line: #f3c1c4;
+
+	/* Ambient motion */
+	--animate-ping-out: ping-out 1.8s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+	--animate-float: float 5s ease-in-out infinite;
+	--animate-float-slow: float 6s ease-in-out infinite 1.2s;
+	--animate-blink: blink 1s steps(1) infinite;
+	--animate-progress: progress 9s linear infinite;
+
+	@keyframes ping-out {
+		0% {
+			transform: scale(1);
+			opacity: 0.7;
+		}
+		100% {
+			transform: scale(2.6);
+			opacity: 0;
+		}
+	}
+	@keyframes float {
+		0%,
+		100% {
+			transform: translateY(0);
+		}
+		50% {
+			transform: translateY(-8px);
+		}
+	}
+	@keyframes blink {
+		0%,
+		100% {
+			opacity: 1;
+		}
+		50% {
+			opacity: 0.35;
+		}
+	}
+	@keyframes progress {
+		from {
+			width: 30%;
+		}
+		to {
+			width: 46%;
+		}
+	}
+	@keyframes rise {
+		from {
+			transform: translateY(16px);
+			opacity: 0;
+		}
+		to {
+			transform: translateY(0);
+			opacity: 1;
+		}
+	}
+}
+
+/* The page shell: 1312px of content inside a 1440px frame */
+@utility shell {
+	box-sizing: content-box;
+	max-width: 1312px;
+	margin-inline: auto;
+	padding-inline: 64px;
+
+	@variant max-wide {
+		padding-inline: 20px;
+	}
+}
+
+/* Long-form body copy: legal pages, blog posts, the About story */
+@utility prose-site {
+	& p {
+		margin: 0 0 18px;
+		font-size: 17px;
+		line-height: 29px;
+		color: var(--color-ink-soft);
+	}
+
+	& h3 {
+		margin: 36px 0 12px;
+		font-size: 22px;
+		line-height: 30px;
+		font-weight: 600;
+		letter-spacing: -0.01em;
+	}
+
+	& ul {
+		margin: 0 0 18px;
+		padding-left: 22px;
+		font-size: 17px;
+		line-height: 29px;
+		color: var(--color-ink-soft);
+		list-style: disc;
+	}
+
+	& li {
+		margin-bottom: 6px;
+	}
+}
+
+/* Entrance animation, driven by the `reveal` action */
+@utility reveal {
+	opacity: 0;
+
+	&.is-visible {
+		animation: rise var(--reveal-duration, 0.7s) cubic-bezier(0.2, 0.8, 0.2, 1)
+			var(--reveal-delay, 0ms) both;
+	}
+}
+
+@layer base {
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		background: var(--color-paper);
+		color: var(--color-ink);
+		font-family: var(--font-sans);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+
+	*,
+	*::before,
+	*::after {
+		animation: none !important;
+		transition: none !important;
+	}
+
+	.reveal {
+		opacity: 1;
+	}
+}
