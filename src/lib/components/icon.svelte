@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { ClassValue } from 'svelte/elements';
 	import { icons, iconWeights, type IconName, type IconWeight } from '#lib/icons.js';
 
 	interface Props {
@@ -8,7 +9,7 @@
 		weight?: IconWeight;
 		/** Give a label when the icon carries meaning on its own. */
 		label?: string;
-		class?: string;
+		class?: ClassValue;
 	}
 
 	let { name, size = 24, weight, label, class: className }: Props = $props();

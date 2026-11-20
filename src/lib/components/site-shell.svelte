@@ -12,7 +12,7 @@
 	let { variant = 'site', current, children }: Props = $props();
 </script>
 
-<div class="flex min-h-screen w-full flex-col overflow-hidden bg-paper text-ink">
+<div class="flex min-h-screen w-full flex-col bg-paper text-ink">
 	<SiteHeader {variant} {current} />
 	{@render children()}
 	<SiteFooter />

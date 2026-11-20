@@ -12,7 +12,7 @@
 
 <section
 	id="top"
-	class="shell grid w-full grid-cols-[560px_1fr] items-start gap-10 pt-16 pb-24 max-wide:grid-cols-1"
+	class="shell grid w-full grid-cols-[560px_1fr] items-start gap-10 pt-16 pb-24 max-xl:grid-cols-1"
 >
 	<div class="flex flex-col pt-14 max-wide:pt-0">
 		<span use:reveal class="reveal">
@@ -52,33 +52,33 @@
 		</a>
 	</div>
 
-	<div use:reveal={{ delay: 160 }} class="relative h-190 reveal max-wide:h-105">
+	<div use:reveal={{ delay: 160 }} class="relative h-190 reveal">
 		<div
-			class="absolute top-0 left-22.5 h-125 w-155 rounded-4xl bg-ink-soft object-cover max-wide:left-0 max-wide:h-100 max-wide:w-full"
+			class="absolute top-0 left-22.5 h-125 w-155 rounded-4xl bg-ink-soft object-cover max-xl:left-0 max-xl:h-100 max-xl:w-full"
 		>
 			<img
 				src={heroStreet}
 				fetchpriority="high"
 				alt="A driver smiling through the window of his car in Lagos"
-				class="size-full rounded-4xl object-cover opacity-50 max-wide:hidden"
+				class="size-full rounded-4xl object-cover opacity-50"
 			/>
 		</div>
 		<div
-			class="absolute top-80 left-0 z-2 h-90 w-70 rounded-[28px] border-6 border-white bg-ink-soft object-cover max-wide:hidden"
+			class="absolute top-80 left-0 z-2 h-90 w-70 rounded-[28px] border-6 border-white bg-ink-soft object-cover max-xl:top-80 max-xl:left-[10%] max-sm:hidden"
 		>
 			<img
 				src={heroRider}
 				alt="A driver smiling through the window of his car in Lagos"
-				class="size-full rounded-[28px] object-cover opacity-50 max-wide:hidden"
+				class="size-full rounded-[28px] object-cover opacity-50"
 			/>
 		</div>
 		<div
-			class="absolute top-102.5 left-105 z-2 h-67.5 w-72.5 rounded-[28px] border-6 border-white bg-ink-soft object-cover max-wide:hidden"
+			class="absolute top-102.5 left-105 z-2 h-67.5 w-72.5 rounded-[28px] border-6 border-white bg-ink-soft object-cover max-xl:top-60 max-xl:right-[10%] max-md:hidden"
 		>
 			<img
 				src={heroDriver}
 				alt="A driver smiling through the window of his car in Lagos"
-				class="size-full rounded-[28px] object-cover opacity-50 max-wide:hidden"
+				class="size-full rounded-[28px] object-cover opacity-50"
 			/>
 		</div>
 
@@ -101,7 +101,7 @@
 		</div>
 
 		<!-- Locked price -->
-		<div class={[card, 'top-62.5 left-135 animate-float-slow max-wide:hidden']}>
+		<div class={[card, 'top-62.5 left-135 animate-float-slow max-xl:hidden']}>
 			<div class="flex flex-col gap-0.5 px-4 py-3.5">
 				<span class="flex items-center gap-1.5 text-xs/4 text-muted">
 					<Icon name="lock" size={14} />
@@ -112,7 +112,7 @@
 		</div>
 
 		<!-- Someone following the trip -->
-		<div class={[card, 'top-162.5 left-30 animate-float-slow max-wide:hidden']}>
+		<div class={[card, 'top-162.5 left-30 animate-float-slow max-md:hidden']}>
 			<div class="flex items-center gap-3 py-3 pr-4 pl-3">
 				<span class="relative size-10">
 					<span class="absolute inset-0 animate-ping-out rounded-full bg-accent/35"></span>
@@ -130,7 +130,7 @@
 		</div>
 
 		<!-- Driver earnings -->
-		<div class={[card, 'top-160 left-100 animate-float max-wide:hidden']}>
+		<div class={[card, 'top-160 left-100 animate-float max-xl:top-120 max-md:hidden']}>
 			<div class="flex items-center gap-2.5 px-3.5 py-3">
 				<span
 					class="flex size-9 items-center justify-center rounded-[10px] bg-accent-soft text-accent"

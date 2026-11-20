@@ -4,17 +4,17 @@
 	import { reveal } from '#lib/actions/reveal.js';
 
 	const promises = [
-		'Full fare shown before you book, locked once a driver accepts',
-		'Pay by card or bank transfer, so no cash and no change wahala',
-		'Cancel free until your driver arrives, and 5 free minutes of waiting at pickup',
-		'Drivers keep 85% of every fare. We take a flat 15%.'
+		'The full fare shown before you book, and locked once a driver accepts.',
+		'You pay by card or bank transfer, so no cash and no extra wahala.',
+		'You have until your driver arrives to cancel the ride, else you get a strike.',
+		'Our drivers keep all 85% of every fare. We take a flat 15% to keep our team happy.'
 	];
 
 	const breakdown = [
-		{ label: 'Your driver, Olutobi', value: '₦7,140 · 85%', strong: true },
-		{ label: 'Aera', value: '₦1,260 · 15%', strong: false },
-		{ label: 'Booking fee', value: '₦0', strong: false },
-		{ label: 'Paid with', value: 'Card or bank transfer', strong: false }
+		{ label: 'Your driver, Olutobi', value: '₦7,140 · 85%', strong: true, pro: false },
+		{ label: 'Aera', value: '₦1,260 · 15%', strong: false, pro: false },
+		{ label: 'Booking fee', value: '₦0', strong: false, pro: true },
+		{ label: 'Paid with', value: 'Card or bank transfer', strong: false, pro: false }
 	];
 </script>
 
@@ -26,7 +26,7 @@
 		<SectionHeading
 			eyebrow="Fares"
 			title="The price you see is the price you pay."
-			body="No surprise numbers when you get out of the car. Here’s exactly where your money goes."
+			body="We don't do surprise numbers when you get out of the car. Here’s where your money goes."
 		/>
 
 		<ul class="m-0 flex list-none flex-col gap-4 p-0">
@@ -50,7 +50,7 @@
 		<span class="flex items-center justify-between">
 			<span class="text-sm text-muted">Lekki Phase 1 → Ikeja City Mall</span>
 			<span
-				class="inline-flex h-[26px] items-center gap-1 rounded-full bg-accent-soft px-2.5 text-xs font-semibold text-accent"
+				class="inline-flex h-6.5 items-center gap-1 rounded-full bg-accent-soft px-2.5 text-xs font-semibold text-accent"
 			>
 				<Icon name="lock" size={12} />
 				Locked
@@ -58,12 +58,18 @@
 		</span>
 
 		<span class="mt-2.5 text-[64px]/[72px] font-bold tracking-[-0.03em]">₦8,400</span>
-		<span class="mb-[18px] text-sm text-muted">What you pay. Same at the end of the ride.</span>
+		<span class="mb-4.5 text-sm text-muted">Here's what you pay, this never changes.</span>
 
 		{#each breakdown as row (row.label)}
 			<div class="flex items-center justify-between border-t border-line-soft py-3.5 text-base/6">
 				<span class={row.strong ? 'font-semibold text-ink' : 'text-muted'}>{row.label}</span>
-				<span class={['text-ink tabular-nums', row.strong ? 'font-bold' : 'font-semibold']}>
+				<span
+					class={[
+						'tabular-nums',
+						row.pro ? 'text-success' : 'text-ink',
+						row.strong ? 'font-bold' : 'font-semibold'
+					]}
+				>
 					{row.value}
 				</span>
 			</div>

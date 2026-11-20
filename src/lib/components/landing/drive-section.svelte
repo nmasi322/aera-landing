@@ -4,12 +4,13 @@
 	import PhotoPlaceholder from '#lib/components/photo-placeholder.svelte';
 	import SectionHeading from '#lib/components/section-heading.svelte';
 	import { reveal } from '#lib/actions/reveal.js';
+	import driverPhoto from '#assets/driver.webp';
 
 	const steps = [
-		{ title: 'Apply in the app', body: 'Same app as your rides. Just switch to Driver.' },
+		{ title: 'Apply in the app', body: "It's the same app as your rides. Just switch to Driver." },
 		{ title: 'We check your papers', body: 'We review your ID, licence and car papers.' },
-		{ title: 'Quick car inspection', body: 'Book a slot at our Lekki or Ikeja centre.' },
-		{ title: 'Go online', body: 'Accept trips when you want. Earn 85% of every fare.' }
+		{ title: 'Quick car inspection', body: 'Book a slot for your car to be inspected.' },
+		{ title: 'Go online', body: 'Accept trips when you want, and take home 85% of every trip.' }
 	];
 </script>
 
@@ -17,7 +18,9 @@
 	<div class="shell grid grid-cols-2 items-center gap-20 py-30 max-wide:grid-cols-1 max-wide:py-18">
 		<div use:reveal class="relative reveal">
 			<PhotoPlaceholder
-				caption="Driver in his car, Lagos · Joshua Oluwagbemiga / Unsplash"
+				src={driverPhoto}
+				caption="Driver in his car, Lagos"
+				alt="A driver smiling through the window of his car"
 				class="h-160 w-full rounded-4xl"
 			/>
 			<div
@@ -35,8 +38,8 @@
 		<div class="flex flex-col gap-8">
 			<SectionHeading
 				eyebrow="Drive with Aera"
-				title="Your car. Your hours. 85% of every fare."
-				body="Drive when it suits you and keep most of what you earn. Earnings go straight to your bank account."
+				title="It's your car, your hours, and 85% of every fare."
+				body="Drive whenever you want and keep most of what you earn. Your earnings go straight to your bank account, not a virtual wallet."
 			/>
 
 			<ol class="m-0 list-none border-b border-line p-0">
@@ -58,8 +61,8 @@
 				{/each}
 			</ol>
 
-			<div use:reveal={{ delay: 360 }} class="flex reveal flex-wrap items-center gap-4">
-				<Button href="#get" size="xl">
+			<div use:reveal={{ delay: 360 }} class="flex w-fit reveal flex-col gap-4">
+				<Button href="#get" size="lg" class="w-fit">
 					Apply to drive
 					<Icon name="arrow-right" size={18} />
 				</Button>

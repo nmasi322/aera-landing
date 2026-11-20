@@ -1,6 +1,5 @@
 <script lang="ts">
 	import wordmark from '#lib/assets/aera-wordmark-white.png';
-	import Icon from '#lib/components/icon.svelte';
 	import StoreButtons from '#lib/components/store-buttons.svelte';
 	import { reveal } from '#lib/actions/reveal.js';
 
@@ -29,17 +28,9 @@
 			Ready when you are.
 		</h2>
 		<p class="relative mt-4 max-w-130 text-[19px]/[30px] text-ash">
-			Download Aera, add a card, and your first trip is a few taps away. Move different.
+			Download Aera, and make your first trip in just a few taps. Move different.
 		</p>
 
 		<StoreButtons invert class="relative mt-9 justify-center" />
-
-		<a
-			href="#drive"
-			class="relative mt-5.5 inline-flex items-center gap-1.5 text-[15px] font-semibold text-paper"
-		>
-			Or apply to drive
-			<Icon name="arrow-right" size={16} />
-		</a>
 	</div>
 </section>

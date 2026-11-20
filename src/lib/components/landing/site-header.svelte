@@ -33,7 +33,7 @@
 	const getTheApp = $derived(variant === 'landing' ? '#get' : '/#get');
 </script>
 
-<header use:reveal class="shell flex h-[84px] w-full reveal items-center">
+<header use:reveal class="shell flex h-21 w-full reveal items-center">
 	<a href={home} aria-label="Aera — home" class="flex">
 		<img src={wordmark} alt="Aera" class="block h-auto w-21" />
 	</a>

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
-	import type { HTMLAnchorAttributes, HTMLButtonAttributes } from 'svelte/elements';
+	import type { ClassValue, HTMLAnchorAttributes, HTMLButtonAttributes } from 'svelte/elements';
 
 	type Variant = 'default' | 'outline' | 'ghost' | 'destructive';
 	type Size = 'sm' | 'md' | 'lg' | 'xl' | 'icon';
@@ -15,7 +15,7 @@
 		pill?: boolean;
 		/** Renders an `<a>` instead of a `<button>`. */
 		href?: string;
-		class?: string;
+		class?: ClassValue;
 		children: Snippet;
 	}
 
