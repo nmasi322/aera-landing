@@ -10,12 +10,11 @@ export interface LegalPage {
 
 export const termsPage: LegalPage = {
 	title: 'Terms of use',
-	updated: 'Last updated [date] · Effective [date]',
+	updated: 'Last updated 5th November, 2026 · Effective 5th November, 2026',
 	summary: [
 		'You pay the price you see when you book. It’s locked once a driver accepts, unless you change the trip.',
 		'You pay by card or bank transfer in the app. No cash.',
 		'Cancelling is free until your driver arrives. After that, a cancellation fee may apply.',
-		'Your driver waits 5 minutes for free. After that, a waiting charge may apply.',
 		'Drivers are independent and keep 85% of each fare; Aera keeps 15%.',
 		'Be respectful. Harassment, unsafe behaviour or asking for off-app payments can get an account suspended.'
 	],
@@ -27,7 +26,7 @@ export const termsPage: LegalPage = {
 			blocks: [
 				{
 					type: 'p',
-					text: 'Aera is a product of AFRIBA TECHNOLOGIES, a company registered in Nigeria at [registered address]. “Aera”, “we” and “us” in these terms mean AFRIBA TECHNOLOGIES.'
+					text: 'Aera is a product of AFRIBA TECHNOLOGIES, a company registered in Nigeria at 8, Jimoh Ojora Street Ajegunle Apapa Lagos. “Aera”, “we” and “us” in these terms mean AFRIBA TECHNOLOGIES.'
 				}
 			]
 		},
@@ -132,7 +131,7 @@ export const termsPage: LegalPage = {
 			blocks: [
 				{
 					type: 'p',
-					text: 'Questions about these terms? Message us in the app or email [legal@aera.ng].'
+					text: 'Questions about these terms? Message us in the app or email legal@getaera.co.'
 				}
 			]
 		}
@@ -141,7 +140,7 @@ export const termsPage: LegalPage = {
 
 export const privacyPage: LegalPage = {
 	title: 'Privacy policy',
-	updated: 'Last updated [date] · Effective [date]',
+	updated: 'Last updated 5th November, 2026 · Effective 5th November, 2026',
 	summary: [
 		'We collect what we need to run rides: your name, phone number, location during trips, and payment details through our payment provider.',
 		'Your full card number never touches our servers. We keep only the last 4 digits.',
@@ -158,7 +157,7 @@ export const privacyPage: LegalPage = {
 			blocks: [
 				{
 					type: 'p',
-					text: 'Aera is a product of AFRIBA TECHNOLOGIES, the controller of your personal data, registered at [registered address]. We follow the Nigeria Data Protection Act 2023.'
+					text: 'Aera is a product of AFRIBA TECHNOLOGIES, the controller of your personal data, registered at 8, Jimoh Ojora Street Ajegunle Apapa Lagos. We follow the Nigeria Data Protection Act 2023.'
 				}
 			]
 		},
@@ -246,7 +245,7 @@ export const privacyPage: LegalPage = {
 			blocks: [
 				{
 					type: 'p',
-					text: 'You can ask to see, correct, download or delete your data, or object to how we use it. Message us in the app or email [privacy@aera.ng]. You can also complain to the Nigeria Data Protection Commission.'
+					text: 'You can ask to see, correct, download or delete your data, or object to how we use it. Message us in the app or email legal@getaera.co. You can also complain to the Nigeria Data Protection Commission.'
 				}
 			]
 		},
@@ -266,7 +265,7 @@ export const privacyPage: LegalPage = {
 			nav: 'Contact',
 			heading: '9. Contact',
 			blocks: [
-				{ type: 'p', text: 'Our data protection officer can be reached at [privacy@aera.ng].' }
+				{ type: 'p', text: 'Our data protection officer can be reached at legal@getaera.co.' }
 			]
 		}
 	]

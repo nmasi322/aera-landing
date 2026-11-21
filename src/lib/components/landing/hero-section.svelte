@@ -15,7 +15,7 @@
 	class="shell grid w-full grid-cols-[560px_1fr] items-start gap-10 pt-16 pb-24 max-xl:grid-cols-1"
 >
 	<div class="flex flex-col pt-14 max-wide:pt-0">
-		<span use:reveal class="reveal">
+		<!-- <span use:reveal class="reveal">
 			<span
 				class="inline-flex h-8.5 items-center gap-2.5 rounded-full border border-line bg-white pr-3.5 pl-3 text-sm/5 font-medium text-ink-soft"
 			>
@@ -25,7 +25,7 @@
 				</span>
 				Now arriving in Lagos · pilot from November
 			</span>
-		</span>
+		</span> -->
 
 		<h1
 			use:reveal={{ delay: 80 }}
@@ -52,7 +52,7 @@
 		</a>
 	</div>
 
-	<div use:reveal={{ delay: 160 }} class="relative h-190 reveal">
+	<div use:reveal={{ delay: 160 }} class="relative h-190 reveal max-sm:h-96">
 		<div
 			class="absolute top-0 left-22.5 h-125 w-155 rounded-4xl bg-ink-soft object-cover max-xl:left-0 max-xl:h-100 max-xl:w-full"
 		>

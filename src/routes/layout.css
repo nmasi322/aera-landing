@@ -51,6 +51,7 @@
 	--animate-float-slow: float 6s ease-in-out infinite 1.2s;
 	--animate-blink: blink 1s steps(1) infinite;
 	--animate-progress: progress 9s linear infinite;
+	--animate-wave: wave 1s ease-in-out infinite;
 
 	@keyframes ping-out {
 		0% {
@@ -88,6 +89,15 @@
 			width: 46%;
 		}
 	}
+	@keyframes wave {
+		0%,
+		100% {
+			transform: scaleY(0.35);
+		}
+		50% {
+			transform: scaleY(1);
+		}
+	}
 	@keyframes rise {
 		from {
 			transform: translateY(16px);
@@ -103,7 +113,7 @@
 /* The page shell: 1312px of content inside a 1440px frame */
 @utility shell {
 	box-sizing: border-box;
-	max-width: 1312px;
+	max-width: 1376px;
 	margin-inline: auto;
 	padding: 64px;
 
@@ -157,6 +167,8 @@
 @layer base {
 	html {
 		scroll-behavior: smooth;
+		/* Clears the fixed header when jumping to a section. */
+		scroll-padding-top: 84px;
 	}
 
 	body {

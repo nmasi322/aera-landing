@@ -5,7 +5,7 @@
 
 	interface Props {
 		variant?: 'landing' | 'site';
-		current?: 'blog' | 'help';
+		current?: 'home' | 'about' | 'faq' | 'legal' | 'blog' | 'help';
 		children: Snippet;
 	}
 
@@ -14,6 +14,8 @@
 
 <div class="flex min-h-screen w-full flex-col bg-paper text-ink">
 	<SiteHeader {variant} {current} />
+	<!-- Holds the space the fixed header takes out of the flow. -->
+	<div class="h-21 shrink-0" aria-hidden="true"></div>
 	{@render children()}
 	<SiteFooter />
 </div>

@@ -17,7 +17,7 @@
 			class="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0)_50%,rgba(0,0,0,.85)_100%)]"
 		></div>
 		<div class="relative flex max-w-190 flex-col gap-4 p-14 text-paper max-wide:px-5 max-wide:py-8">
-			<span class="text-sm font-semibold text-white">Made in Nigeria, for Lagos</span>
+			<span class="text-sm font-semibold text-ink-soft">Made in Nigeria, for Lagos</span>
 			<h2 class="text-[52px]/[58px] font-semibold tracking-[-0.035em] max-wide:text-[36px]/[42px]">
 				We’re starting small so we get it right.
 			</h2>

@@ -12,6 +12,6 @@
 	/>
 </svelte:head>
 
-<SiteShell>
+<SiteShell current="legal">
 	<LegalPage page={privacyPage} active="privacy" />
 </SiteShell>
