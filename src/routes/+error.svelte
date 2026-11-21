@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import SiteShell from '#lib/components/site-shell.svelte';
+	import Seo from '#lib/components/seo.svelte';
 	import Button from '#lib/components/button.svelte';
 	import Icon from '#lib/components/icon.svelte';
 
@@ -10,13 +11,11 @@
 	const body = $derived(
 		page.status === 404
 			? 'The link may be old, or the page may have moved. Everything else is a tap away.'
-			: 'Try again in a moment. If it keeps happening, message us in the app.'
+			: 'Try again in a moment. If it keeps happening, email us at support@getaera.co.'
 	);
 </script>
 
-<svelte:head>
-	<title>Aera — {page.status}</title>
-</svelte:head>
+<Seo title={`Aera: ${page.status}`} description={body} noindex />
 
 <SiteShell>
 	<section class="shell flex w-full flex-col items-start gap-5 pt-24 pb-30">

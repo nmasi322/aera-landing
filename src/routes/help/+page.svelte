@@ -1,5 +1,7 @@
 <script lang="ts">
 	import SiteShell from '#lib/components/site-shell.svelte';
+	import Seo from '#lib/components/seo.svelte';
+	import { breadcrumbs, site } from '#lib/seo.js';
 	import CategoryBadge from '#lib/components/category-badge.svelte';
 	import Button from '#lib/components/button.svelte';
 	import Icon from '#lib/components/icon.svelte';
@@ -16,13 +18,27 @@
 	const topics = $derived(tab === 'riders' ? riderTopics : driverTopics);
 </script>
 
-<svelte:head>
-	<title>Aera: Help centre</title>
-	<meta
-		name="description"
-		content="Answers for riders and drivers: trips, payments, safety, papers, payouts and account help."
-	/>
-</svelte:head>
+<Seo
+	title="Aera help centre — rider and driver support"
+	description="Answers for riders and drivers: trips, payments, safety, papers, payouts and account help."
+	path="/help"
+	jsonLd={[
+		{
+			'@type': 'WebPage',
+			'@id': `${site.origin}/help#webpage`,
+			url: `${site.origin}/help`,
+			name: 'Aera help centre',
+			description:
+				'Answers for riders and drivers: trips, payments, safety, papers, payouts and account help.',
+			isPartOf: { '@id': `${site.origin}/#website` },
+			about: { '@id': `${site.origin}/#organization` }
+		},
+		breadcrumbs([
+			{ name: 'Home', path: '/' },
+			{ name: 'Help centre', path: '/help' }
+		])
+	]}
+/>
 
 <SiteShell current="help">
 	<section class="w-full bg-night text-paper">

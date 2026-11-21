@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import wordmark from '#lib/assets/aera-wordmark-white.png';
+	import Seo from '#lib/components/seo.svelte';
 	import SiteShell from '#lib/components/site-shell.svelte';
 	import PhotoPlaceholder from '#lib/components/photo-placeholder.svelte';
 	import CategoryBadge from '#lib/components/category-badge.svelte';
@@ -11,9 +12,37 @@
 	import { reveal } from '#lib/actions/reveal.js';
 	import type { PageProps } from './$types';
 
+	import { breadcrumbs, isoDate, site } from '#lib/seo.js';
+
 	let { data }: PageProps = $props();
 
 	const { post, article, related } = $derived(data);
+
+	const published = $derived(isoDate(post.date));
+	const postUrl = $derived(`${site.origin}/blog/${post.slug}`);
+	const jsonLd = $derived([
+		{
+			'@type': 'BlogPosting',
+			'@id': `${postUrl}#post`,
+			url: postUrl,
+			mainEntityOfPage: { '@type': 'WebPage', '@id': postUrl },
+			headline: post.title,
+			description: post.excerpt,
+			articleSection: post.category,
+			datePublished: published,
+			dateModified: published,
+			inLanguage: 'en-NG',
+			image: `${site.origin}${site.ogImage}`,
+			author: { '@type': 'Organization', name: article.author, url: site.origin },
+			publisher: { '@id': `${site.origin}/#organization` },
+			isPartOf: { '@id': `${site.origin}/blog#blog` }
+		},
+		breadcrumbs([
+			{ name: 'Home', path: '/' },
+			{ name: 'Blog', path: '/blog' },
+			{ name: post.title, path: `/blog/${post.slug}` }
+		])
+	]);
 
 	const shareUrl = $derived(page.url.href);
 	const shareLinks = $derived([
@@ -47,10 +76,16 @@
 	}
 </script>
 
-<svelte:head>
-	<title>Aera: {post.title}</title>
-	<meta name="description" content={post.excerpt} />
-</svelte:head>
+<Seo
+	title={`${post.title} — Aera blog`}
+	description={post.excerpt}
+	path={`/blog/${post.slug}`}
+	type="article"
+	{published}
+	author={article.author}
+	section={post.category}
+	{jsonLd}
+/>
 
 <SiteShell current="blog">
 	<article class="w-full">

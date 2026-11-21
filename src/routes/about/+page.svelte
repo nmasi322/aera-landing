@@ -1,5 +1,7 @@
 <script lang="ts">
 	import SiteShell from '#lib/components/site-shell.svelte';
+	import Seo from '#lib/components/seo.svelte';
+	import { breadcrumbs, organization, site } from '#lib/seo.js';
 	import PageIntro from '#lib/components/page-intro.svelte';
 	import PhotoPlaceholder from '#lib/components/photo-placeholder.svelte';
 	import RichText from '#lib/components/rich-text.svelte';
@@ -85,13 +87,28 @@
 	];
 </script>
 
-<svelte:head>
-	<title>Aera: About us</title>
-	<meta
-		name="description"
-		content="Aera is a ride-hailing app made in Lagos by AFRIBA TECHNOLOGIES, built to make everyday rides simpler, fairer and safer."
-	/>
-</svelte:head>
+<Seo
+	title="About Aera — the Lagos ride-hailing app from AFRIBA TECHNOLOGIES"
+	description="Aera is a ride-hailing app made in Lagos by AFRIBA TECHNOLOGIES, built to make everyday rides simpler, fairer and safer."
+	path="/about"
+	jsonLd={[
+		organization,
+		{
+			'@type': 'AboutPage',
+			'@id': `${site.origin}/about#webpage`,
+			url: `${site.origin}/about`,
+			name: 'About Aera',
+			description:
+				'Aera is a ride-hailing app made in Lagos by AFRIBA TECHNOLOGIES, built to make everyday rides simpler, fairer and safer.',
+			isPartOf: { '@id': `${site.origin}/#website` },
+			about: { '@id': `${site.origin}/#organization` }
+		},
+		breadcrumbs([
+			{ name: 'Home', path: '/' },
+			{ name: 'About us', path: '/about' }
+		])
+	]}
+/>
 
 <SiteShell current="about">
 	<PageIntro

@@ -1,5 +1,7 @@
 <script lang="ts">
 	import SiteShell from '#lib/components/site-shell.svelte';
+	import Seo from '#lib/components/seo.svelte';
+	import { breadcrumbs, isoDate, site } from '#lib/seo.js';
 	import PageIntro from '#lib/components/page-intro.svelte';
 	import PhotoPlaceholder from '#lib/components/photo-placeholder.svelte';
 	import CategoryBadge from '#lib/components/category-badge.svelte';
@@ -16,13 +18,38 @@
 	);
 </script>
 
-<svelte:head>
-	<title>Aera: Blog</title>
-	<meta
-		name="description"
-		content="How Aera works, what we’re building next, and the people who keep Lagos moving."
-	/>
-</svelte:head>
+<Seo
+	title="Aera blog — rides, drivers and safety in Lagos"
+	description="How Aera works, what we’re building next, and the people who keep Lagos moving."
+	path="/blog"
+	jsonLd={[
+		{
+			'@type': 'Blog',
+			'@id': `${site.origin}/blog#blog`,
+			url: `${site.origin}/blog`,
+			name: 'The Aera blog',
+			description:
+				'How Aera works, what we’re building next, and the people who keep Lagos moving.',
+			inLanguage: 'en-NG',
+			publisher: { '@id': `${site.origin}/#organization` },
+			blogPost: posts
+				.filter((post) => post.article)
+				.map((post) => ({
+					'@type': 'BlogPosting',
+					'@id': `${site.origin}/blog/${post.slug}#post`,
+					url: `${site.origin}/blog/${post.slug}`,
+					headline: post.title,
+					description: post.excerpt,
+					datePublished: isoDate(post.date),
+					author: { '@type': 'Organization', name: post.article?.author ?? site.name }
+				}))
+		},
+		breadcrumbs([
+			{ name: 'Home', path: '/' },
+			{ name: 'Blog', path: '/blog' }
+		])
+	]}
+/>
 
 <SiteShell current="blog">
 	<PageIntro

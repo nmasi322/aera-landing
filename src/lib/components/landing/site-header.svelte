@@ -69,7 +69,7 @@
 
 <header class="fixed inset-x-0 top-0 z-50 w-full bg-paper/85 backdrop-blur-md">
 	<div use:reveal class="shell flex h-21 w-full reveal items-center border-b border-line/60 py-0!">
-		<a href={home} aria-label="Aera — home" class="flex">
+		<a href={home} aria-label="Aera - home" class="flex">
 			<img src={wordmark} alt="Aera" class="block h-auto w-21" />
 		</a>
 
