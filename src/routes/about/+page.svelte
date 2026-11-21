@@ -12,6 +12,9 @@
 	import { reveal } from '#lib/actions/reveal.js';
 	import type { IconName } from '#lib/icons.js';
 	import type { Component } from 'svelte';
+	import about1 from '#lib/assets/about-1.webp';
+	import about2 from '#lib/assets/about-2.webp';
+	import about3 from '#lib/assets/about-3.webp';
 
 	const story = [
 		{
@@ -101,10 +104,22 @@
 		use:reveal
 		class="shell grid w-full reveal grid-cols-[1.3fr_1fr] gap-5 pb-24 max-wide:grid-cols-1"
 	>
-		<PhotoPlaceholder caption="Lagos street life, people heading out" class="h-130 rounded-4xl" />
+		<PhotoPlaceholder
+			src={about1}
+			caption="Lagos street life, people heading out"
+			class="h-130 rounded-4xl"
+		/>
 		<div class="grid grid-rows-2 gap-5">
-			<PhotoPlaceholder caption="Driver smiling by his car" class="min-h-62.5 rounded-4xl" />
-			<PhotoPlaceholder caption="Friends getting into a car" class="min-h-62.5 rounded-4xl" />
+			<PhotoPlaceholder
+				src={about2}
+				caption="Driver smiling by his car"
+				class="min-h-62.5 rounded-4xl"
+			/>
+			<PhotoPlaceholder
+				src={about3}
+				caption="Friends getting into a car"
+				class="min-h-62.5 rounded-4xl"
+			/>
 		</div>
 	</section>
 

@@ -1,8 +1,8 @@
 <script lang="ts">
 	import Icon from '#lib/components/icon.svelte';
-	import heroStreet from '#assets/hero-1.webp';
-	import heroRider from '#assets/hero-2.webp';
-	import heroDriver from '#assets/hero-3.webp';
+	import heroStreet from '#lib/assets/hero-1.webp';
+	import heroRider from '#lib/assets/hero-2.webp';
+	import heroDriver from '#lib/assets/hero-3.webp';
 	import StoreButtons from '#lib/components/store-buttons.svelte';
 	import { reveal } from '#lib/actions/reveal.js';
 

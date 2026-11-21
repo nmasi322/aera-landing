@@ -1,6 +1,6 @@
 <script lang="ts">
 	import PhotoPlaceholder from '#lib/components/photo-placeholder.svelte';
-	import cityPhoto from '#assets/city.webp';
+	import cityPhoto from '#lib/assets/city.webp';
 
 	import { reveal } from '#lib/actions/reveal.js';
 </script>

@@ -4,7 +4,7 @@
 	import PhotoPlaceholder from '#lib/components/photo-placeholder.svelte';
 	import SectionHeading from '#lib/components/section-heading.svelte';
 	import { reveal } from '#lib/actions/reveal.js';
-	import driverPhoto from '#assets/driver.webp';
+	import driverPhoto from '#lib/assets/driver.webp';
 
 	const steps = [
 		{ title: 'Apply in the app', body: "It's the same app as your rides. Just switch to Driver." },

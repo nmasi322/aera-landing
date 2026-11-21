@@ -6,8 +6,7 @@
 	"packageManager": "yarn@1.22.22",
 	"imports": {
 		"#lib": "./src/lib/index.js",
-		"#lib/*": "./src/lib/*",
-		"#assets/*": "./src/assets/*"
+		"#lib/*": "./src/lib/*"
 	},
 	"scripts": {
 		"dev": "vite dev",
